@@ -2,21 +2,12 @@
 
 <img src="assets/cover.svg" alt="Awesome Agent Memory — A research reading room" width="100%" />
 
-<br />
-
-**Agent 记忆研究的中文精读库**
-
-从原论文的背景与方法出发，读懂记忆如何形成、如何被使用，以及何时能够改善行动。
-
-<sub>19 篇详细解析 · 5 条阅读路径 · 方法拆解 · 实验证据 · 独立评论</sub>
-
-<br /><br />
-
-[研究对照](guides/comparison.md) · [术语与版本](guides/source-verification.md) · [解析规范](templates/paper-analysis.md)
+<h3>Agent 记忆研究的中文精读库</h3>
+<p>从原论文的背景与方法出发，读懂记忆如何形成、如何被使用，以及何时能够改善行动。</p>
+<p><sub>19 篇详细解析 · 5 条阅读路径 · 方法拆解 · 实验证据 · 独立评论</sub></p>
+<p><a href="guides/comparison.md">研究对照</a> · <a href="guides/source-verification.md">术语与版本</a> · <a href="templates/paper-analysis.md">解析规范</a></p>
 
 </div>
-
-<br />
 
 ## 阅读这份知识库
 
@@ -149,8 +140,6 @@
 ## 延续这份精读
 
 修订应补充真实方法细节、明确实验条件，或纠正解释与引用。新增文章可使用 [解析规范](templates/paper-analysis.md)，完整覆盖背景、方法、案例、实验、总结与评论。
-
-<br />
 
 ---
 
