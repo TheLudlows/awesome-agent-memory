@@ -1,4 +1,4 @@
-# Hindsight：Hindsight：支持保留、回忆与反思的结构化智能体记忆
+# Hindsight：支持保留、回忆与反思的结构化智能体记忆
 
 **英文题名：** Hindsight: Structured Agent Memory that Retains, Recalls, and Reflects
 

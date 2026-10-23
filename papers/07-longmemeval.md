@@ -1,4 +1,4 @@
-# LongMemEval：LongMemEval：聊天助手长期交互记忆的基准评测
+# LongMemEval：聊天助手长期交互记忆的基准评测
 
 **英文题名：** LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory
 

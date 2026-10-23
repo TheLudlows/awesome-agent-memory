@@ -1,4 +1,4 @@
-# A-Mem：A-Mem：面向大语言模型智能体的自主记忆
+# A-Mem：面向大语言模型智能体的自主记忆
 
 **英文题名：** A-Mem: Agentic Memory for LLM Agents
 

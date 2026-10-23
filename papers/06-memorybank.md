@@ -1,4 +1,4 @@
-# MemoryBank：MemoryBank：通过长期记忆增强大语言模型
+# MemoryBank：通过长期记忆增强大语言模型
 
 **英文题名：** MemoryBank: Enhancing Large Language Models with Long-Term Memory
 

@@ -1,4 +1,4 @@
-# MemGPT：MemGPT：迈向作为操作系统的大语言模型
+# MemGPT：迈向作为操作系统的大语言模型
 
 **英文题名：** MemGPT: Towards LLMs as Operating Systems
 

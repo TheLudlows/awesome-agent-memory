@@ -1,4 +1,4 @@
-# Memory-R1：Memory-R1：通过强化学习提升大语言模型智能体管理和利用记忆的能力
+# Memory-R1：通过强化学习提升大语言模型智能体管理和利用记忆的能力
 
 **英文题名：** Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning
 

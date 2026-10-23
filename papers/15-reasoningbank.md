@@ -1,4 +1,4 @@
-# ReasoningBank：ReasoningBank：通过推理记忆扩展智能体的自我进化能力
+# ReasoningBank：通过推理记忆扩展智能体的自我进化能力
 
 **英文题名：** ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 

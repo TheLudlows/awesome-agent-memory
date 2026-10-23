@@ -1,4 +1,4 @@
-# Voyager：Voyager：基于大语言模型的开放式具身智能体
+# Voyager：基于大语言模型的开放式具身智能体
 
 **英文题名：** Voyager: An Open-Ended Embodied Agent with Large Language Models
 

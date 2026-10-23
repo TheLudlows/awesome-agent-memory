@@ -1,4 +1,4 @@
-# Reflexion：Reflexion：通过语言反馈改进的语言智能体
+# Reflexion：通过语言反馈改进的语言智能体
 
 **英文题名：** Reflexion: Language Agents with Verbal Reinforcement Learning
 

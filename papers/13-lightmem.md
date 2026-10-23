@@ -1,4 +1,4 @@
-# LightMem：LightMem：轻量、高效的记忆增强生成
+# LightMem：轻量、高效的记忆增强生成
 
 **英文题名：** LightMem: Lightweight and Efficient Memory-Augmented Generation
 
