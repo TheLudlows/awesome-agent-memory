@@ -5,7 +5,7 @@
 <h3>从记住信息，到理解经验</h3>
 <p>一部持续编写的 Agent Memory 中文精读手册。</p>
 <p><sub>19 篇论文 · 5 条阅读路线 · 完整案例 · 方法推演 · 实验证据 · 独立评论</sub></p>
-<p><a href="papers/14-hindsight.md">阅读深度样章</a> · <a href="#map">知识地图</a> · <a href="#routes">选择路线</a> · <a href="#index">论文目录</a> · <a href="guides/comparison.md">比较与术语</a></p>
+<p><a href="papers/14-hindsight.md">阅读 Hindsight</a> · <a href="#map">知识地图</a> · <a href="#routes">选择路线</a> · <a href="#index">论文目录</a> · <a href="guides/comparison.md">比较与术语</a></p>
 
 </div>
 
@@ -15,10 +15,10 @@
 
 本库围绕这些问题读论文：信息如何被保留，怎样被组织和找到，何时需要更新，以及怎样证明过去的经验确实改善了未来的行为。文章从一般编程知识出发，逐步建立直觉，再进入数据结构、必要公式、算法过程与实验解释。
 
-> **当前阅读状态**  
-> [Hindsight](papers/14-hindsight.md) 已完成独立教程式深度样章，含完整方法拆解、贯穿案例、公式演算、实验审视与独立观点。其余 **18 篇保留现有解析，待按样章标准扩写**。
+> **收录与修订**  
+> 五条路线涉及的 **19 篇论文已完成详细解析**，各篇包含方法、实例、实验或论证分析，以及合并的总结与看法。篇幅随内容而定，具体阅读版本见文末来源。
 
-### 样章 · Hindsight
+### 从 Hindsight 开始
 
 **一项发布计划为什么延期，问题修复之后又应该怎样改变建议？**
 
@@ -46,7 +46,7 @@
 
 **03 · 形成判断**
 
-以总结与独立观点收尾，讨论真正的贡献、适用条件、工程代价和下一步值得验证的假设。
+以总结与看法收尾，讨论真正的贡献、适用条件、工程代价和下一步值得验证的假设。
 
 </td>
 </tr>
@@ -109,7 +109,7 @@ flowchart TD
 
 ## 分卷目录
 
-编号保留五条原始路线中首次出现的顺序；分卷按研究问题组织。同一篇论文只维护一份解析。**★ 为已完成的深度样章，其余条目为现有解析。**
+编号保留五条原始路线中首次出现的顺序；分卷按研究问题组织。同一篇论文只维护一份解析。各篇均提供章节目录，方便按问题查阅。
 
 ### 01 · Foundations
 
@@ -143,7 +143,7 @@ flowchart TD
 | 11 | [HippoRAG 2](papers/11-hipporag2.md) | 怎样找到只靠相似度会遗漏的证据？ | 借助图结构和 Personalized PageRank 找到不能只靠相似度定位的关联证据 | [↗](https://proceedings.mlr.press/v267/gutierrez25a.html) |
 | 12 | [A-Mem](papers/12-amem.md) | 新记忆怎样改变旧笔记的组织？ | 把记忆写成互相关联的笔记，并让新信息推动旧笔记的理解更新 | [↗](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
 | 13 | [LightMem](papers/13-lightmem.md) | 如何降低记忆维护的在线开销？ | 先压缩和按主题整理，再把昂贵的长期维护移到离线阶段 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html) |
-| 14 | [★ Hindsight](papers/14-hindsight.md) | 怎样区分证据、归纳和主观判断？ | 分清事实、经历、综合观察和观点，再用保留、回忆、反思三个操作访问 | [↗](https://aclanthology.org/2026.acl-demo.27/) |
+| 14 | [Hindsight](papers/14-hindsight.md) | 怎样区分证据、归纳和主观判断？ | 分清事实、经历、综合观察和观点，再用保留、回忆、反思三个操作访问 | [↗](https://aclanthology.org/2026.acl-demo.27/) |
 
 ### 04 · Learning from Experience
 

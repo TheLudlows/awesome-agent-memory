@@ -1,6 +1,6 @@
 # Hindsight 精读：让 Agent 分清事实、经历、观察与观点
 
-> **独立教程 · 深度样章**  
+> **独立教程 · Hindsight**  
 > 同一个项目聊了几个月，助手还能说清哪些决定变了、为什么变，以及现在该怎么办吗？Hindsight 尝试用一套结构化记忆回答这个问题。
 
 | 阅读信息 | 内容 |
@@ -644,8 +644,7 @@ Retain 保存带有上下文、时间和实体的事实，Observation 把零散�
 | **[P]** | PostgreSQL 官方文档，[Controlling Text Search，§12.3.3 Ranking Search Results](https://www.postgresql.org/docs/18/textsearch-controls.html#TEXTSEARCH-RANKING)，用于区分索引结构与排名函数 |
 | **[L]** | Maharana et al., [Evaluating Very Long-Term Conversational Memory of LLM Agents](https://aclanthology.org/2024.acl-long.747/)，ACL 2024，用于核对正式版数据介绍；具体实验应固定所用数据文件 |
 
-**延伸阅读。** 要理解上下文与外部记忆的边界，可读 [MemGPT](10-memgpt.md)；关注图辅助检索，可读 [HippoRAG 2](11-hipporag2.md)；关注评测设计，可读 [LongMemEval](07-longmemeval.md) 与 [LoCoMo](18-locomo.md)。这些文章目前保留既有解析，后续按本样章标准扩写。
+**延伸阅读。** 要理解上下文与外部记忆的边界，可读 [MemGPT](10-memgpt.md)；关注图辅助检索，可读 [HippoRAG 2](11-hipporag2.md)；关注评测设计，可读 [LongMemEval](07-longmemeval.md) 与 [LoCoMo](18-locomo.md)。这些文章也已完成详细解析，可按自己的关注点继续阅读。
 
 [← 上一篇：LightMem](13-lightmem.md) · [返回总目录](../README.md) · [下一篇：ReasoningBank →](15-reasoningbank.md)
-
 
