@@ -32,6 +32,7 @@
 - [12. 实验精读：高分背后的比较条件](#s12)
 - [13. 局限：哪些问题仍然存在](#s13)
 - [14. 我的工程推演](#s14)
+- [项目实现与数据](#implementation)
 - [15. 总结与看法](#s15)
 - [来源与继续阅读](#sources)
 
@@ -609,6 +610,30 @@ LoCoMo 还提供了一个值得保留的反例：[T 表 4] 中 Hindsight 20B 的
 前一组实验衡量增加模块是否划算，后一组检验系统能否从错误中恢复。这两件事明确以后，再决定要加入多少记忆层次。
 
 <a id="s15"></a>
+<a id="implementation"></a>
+
+## 项目实现与数据
+
+> 实现与资源核查：2026-10-24。下面区分论文实验与后续项目演进；本节完成了资源与源码核查，未重新运行作者实验。
+
+### 官方工程怎样对应 Retain、Recall、Reflect
+
+[vectorize-io/hindsight](https://github.com/vectorize-io/hindsight)公开了服务端、客户端和开发工具。当前源码的 `hindsight-api-slim/hindsight_api/engine` 是理解核心行为的入口：`memory_engine.py` 协调操作，`retain` 处理写入，`search` 负责检索，`reflect` 组织进一步推理。具体路径见[引擎目录](https://github.com/vectorize-io/hindsight/tree/main/hindsight-api-slim/hindsight_api/engine)。
+
+客户端调用 `retain` 只是提交材料，真正的事实提取、时间整理、实体关联与索引维护发生在服务端。`recall` 返回供应用使用的记忆；`reflect` 则继续利用记忆生成回答。比如运维助手先写入一次故障处理记录，下一次事故可先取回历史证据，再由上层 Agent 决定执行什么操作。存储服务和实际执行数据库操作的 Agent 因而承担不同职责。
+
+### 这里的“数据”主要是什么
+
+Hindsight 是记忆系统，用户自己的会话、文档和经历是写入材料。论文实验使用的 LoCoMo、LongMemEval 属于外部基准，不能把实验中构造出的某个 bank 当成通用训练数据集。一个 bank 里生成的事实与观察，是输入材料经过模型处理后的结果，模型或提示变化后可能不同。
+
+当前[官方 benchmark 说明](https://github.com/vectorize-io/hindsight/blob/main/hindsight-dev/benchmarks/README.md)已将 LoCoMo 与 LongMemEval 的评测指向 [Agent Memory Benchmark（AMB）](https://github.com/vectorize-io/agent-memory-benchmark)，通过 `hindsight-system-evals` 对接。它把数据、提示、回答模型、裁判和评分放到统一评测工程中。这是核查时的项目状态，不代表论文发表时使用完全相同的目录和脚本。
+
+### 怎样验证一次写入真的有用
+
+先选少量带时间与更正关系的材料，观察写入后产生了哪些事实、事实引用哪段原文、实体是否合并正确，再检查 Recall 的候选和 Reflect 的证据。若使用异步写入或巩固，要确认相应工作完成后再开始计分，否则测到的可能是后台处理进度。
+
+还应区分质量与性能测试：仓库中的部分性能脚本使用 mock LLM 测数据库与调度开销，不能用其延迟推断真实模型条件下的完整写入耗时。论文四类概念、长技术稿的观点机制与当前产品的类型和接口已有差异，仍应按本篇前文的版本说明分别理解。
+
 <a id="s16"></a>
 
 ## 15. 总结与看法

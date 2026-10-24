@@ -23,6 +23,7 @@
 - [9. 检索分数与回答分数为什么会分开](#s9)
 - [10. 实验如何评价长期记忆](#s10)
 - [11. 遗忘并不只有一种含义](#s11)
+- [项目实现与数据](#implementation)
 - [12. 总结与看法](#s12)
 
 <a id="s1"></a>
@@ -144,6 +145,26 @@ MemoryBank 是记忆机制；SiliconFriend 是用来展示它的聊天应用。�
 从使用角度，遗忘可以是降低召回优先级；从容量角度，可以是归档或移出活跃集合；从数据治理角度，则可能要求删除原文与派生信息。三者不是同一操作。
 
 在实际系统中，对于某些业务，低频记录仍很重要，例如历史审计证据；相反，错误画像即使经常被召回，也应该被纠正。访问频率不能替代真实性和保留义务。
+
+<a id="implementation"></a>
+
+## 项目实现与数据
+
+> 实现与资源核查：2026-10-24。下面区分论文实验与后续项目演进；本节完成了资源与源码核查，未重新运行作者实验。
+
+### MemoryBank 与 SiliconFriend 各自负责什么
+
+[官方仓库](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)把记忆机制与陪伴式聊天应用放在一起。MemoryBank 负责历史整理、摘要与检索；SiliconFriend 还涉及聊天模型和对心理对话的 LoRA 调整。下载 LoRA 权重改善的是模型的回应方式，不能替代为某个用户持续维护外部记忆。
+
+阅读实现可从 [build_memory_index.py](https://github.com/zhongwanjun/MemoryBank-SiliconFriend/blob/main/memory_bank/build_memory_index.py)与 `summarize_memory.py` 开始。前者按用户和日期整理 `query`／`response`，将当天摘要与对话组合为文档，再建立用户对应的索引。这里的日期不是装饰：把几天内容混成一段无时间文本，会让“当时的状态”与“现在的状态”更难区分。
+
+### 公开数据分为历史和探测问题
+
+仓库实际提供 [中文数据](https://github.com/zhongwanjun/MemoryBank-SiliconFriend/tree/main/eval_data/cn)与[英文数据](https://github.com/zhongwanjun/MemoryBank-SiliconFriend/tree/main/eval_data/en)。记忆库 JSON 保存模拟对话历史，`probing_questions_*.jsonl` 保存用于检查记忆能力的问题。原 README 的英文下载文字链接误指向中文目录，使用时应直接核对 `en` 目录中的文件名。
+
+这两类文件的用途不能颠倒：历史是系统可以读的材料，探测问题用于检查后来还能否找回信息。聊天模型的 LoRA 数据又是另一类训练材料。作者提供 LoRA checkpoint 入口，但权重发布不等于全部原始训练对话均已公开。
+
+还要留意版本：仓库 README 写的是人工构造 100 个 probing questions，本篇前文引用的论文实验口径不同，不能仅凭仓库说明认定二者完全一致。重跑前应实际统计下载文件、记录语言与版本。建议先跟踪一个模拟用户一天的原始对话、生成摘要和检索结果，确认摘要没有把临时情绪变成长期性格，再扩大评测。
 
 <a id="s12"></a>
 

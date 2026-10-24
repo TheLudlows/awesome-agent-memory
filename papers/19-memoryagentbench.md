@@ -25,6 +25,7 @@
 - [11. 正式版结果怎样揭示能力差异](#s11)
 - [12. 切块大小和 top-k 为什么不能一把尺子量到底](#s12)
 - [13. 它与另外三套评测如何配合](#s13)
+- [项目实现与数据](#implementation)
 - [14. 总结与看法](#s14)
 
 <a id="s1"></a>
@@ -159,6 +160,30 @@ FactConsolidation 明确规定后来的矛盾事实用于修订已有知识。[1
 LongMemEval 更聚焦长期交互问答中的五种能力；LoCoMo 强调人物、事件和持续对话；MemoryAgentBench 把增量信息管理扩展到学习、全局理解与遗忘；MemoryArena 再检查这些记忆能否指导跨会话行动。
 
 它们不是谁完全取代谁的关系。前几类帮助定位信息能力，最后一类帮助判断真实执行中的效用。
+
+<a id="implementation"></a>
+
+## 项目实现与数据
+
+> 实现与资源核查：2026-10-24。下面区分论文实验与后续项目演进；本节完成了资源与源码核查，未重新运行作者实验。
+
+### 项目提供任务配置、记忆适配和评分
+
+[MemoryAgentBench 官方仓库](https://github.com/HUST-AI-HYZ/MemoryAgentBench)公开不同 Agent 与数据任务配置，处理后的数据位于 [ai-hyz/MemoryAgentBench](https://huggingface.co/datasets/ai-hyz/MemoryAgentBench)。它把既有基准改造成增量输入，同时提供 EventQA 和 FactConsolidation。
+
+数据的一行通常包含一大段 `context`、多道 `questions`、对应 `answers` 与 `metadata`。行数少不等于题目少：同一长上下文会被切块逐步输入，之后回答多道问题。`qa_pair_id` 用于对齐逐题结果；它与“这一大段上下文的编号”不是同一个粒度。
+
+### 怎样把自己的记忆方法接进去
+
+先用一份数据配置确定输入切块、任务类型和长度，再用 Agent 配置确定模型与记忆后端。阅读 `agent.py` 及 `configs/agent_conf`、`configs/data_conf`，可以沿“接收信息—更新记忆—回答问题”追踪系统。
+
+例如 FactConsolidation 先给“甲在机构 A 工作”，后给“甲已转到机构 B”，最终询问当前任职。写入阶段要按序接收这些事实，不能提前用最终问题筛选材料；查询阶段也不能访问标准答案。本文主体所述的选择性遗忘，在仓库与数据配置中仍可能沿用 `Conflict_Resolution`／CR 名称，应按任务含义对应，不要误认为是另一套无关数据。
+
+### 评分配置比一个 accuracy 更具体
+
+官方 README 给出指标映射：部分检索与事实更新任务用子串匹配，分类等任务用严格匹配，推荐任务用 Recall@5，LongMemEval 和摘要任务另需 LLM 评分。比如标准标签为 `43` 时，输出 `label: 43` 可能被严格匹配判错；这类格式错误应与没有学会规则分开分析。
+
+核查时 README 的部分运行命令还指向 `bash_files/eniac`，实际脚本树使用 `bash_files/sh`；应按当前文件位置核对入口。不同记忆方法的依赖也未必能装进同一环境。比较时保存实际执行命令、数据版本、切块大小、模型与各任务指标，并确认一次写入后多问题查询是否会继续改变记忆，否则问题顺序本身也可能影响后面的得分。
 
 <a id="s14"></a>
 
