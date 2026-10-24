@@ -261,7 +261,7 @@ HNSW 可以直观理解为在向量之间组织便于导航的邻居关系，尽
 
 $$
 A(f_j,t+1)=\max_{(f_i,f_j,w,\ell)\in E}
-\left[A(f_i,t)\,w\,\delta\,\mu(\ell)\right]
+\left[A(f_i,t)\cdot w\cdot\delta\cdot\mu(\ell)\right]
 $$
 
 不用被符号吓住。 $A$  是当前线索的搜索优先级； $w$  是连接强度； $\delta$  是每走一步的衰减； $\mu(\ell)$  让某类连接更受重视。多个前驱都能到达同一记忆时，这个表达式取最强传播值，而非把路径全部相加。
@@ -295,7 +295,7 @@ $$
 Hindsight 使用 Reciprocal Rank Fusion，简称 RRF：先看候选在各通道排第几，再累计贡献。[T §4.2.3]
 
 $$
-\mathrm{RRF}(f)=\sum_{R:\,f\in R}\frac{1}{k+\mathrm{rank}_{R}(f)}
+\mathrm{RRF}(f)=\sum_{R:f\in R}\frac{1}{k+\mathrm{rank}_{R}(f)}
 $$
 
  $R$  是某个通道的排名列表， $k$  是平滑常数。候选没在某一路出现，该路就不贡献分数。技术稿给出的典型值为 60；以下以此演算，不代表所有实现配置都固定为 60。
