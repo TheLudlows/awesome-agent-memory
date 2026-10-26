@@ -16,8 +16,8 @@
   <text x="65" y="230" font-family="Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-1.7" fill="#f4f7fc">Agent Memory</text>
   <text x="68" y="283" font-family="Arial, sans-serif" font-size="19" fill="#b4c3d9">Understand the papers. Examine the evidence. Form a view.</text>
   <line x1="68" y1="326" x2="738" y2="326" stroke="#28384f"/>
-  <text x="68" y="370" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.7" fill="#d5e1f0">19 PAPERS</text>
-  <text x="232" y="370" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.7" fill="#d5e1f0">5 READING PATHS</text>
+  <text x="68" y="370" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.7" fill="#d5e1f0">34 PAPERS</text>
+  <text x="232" y="370" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.7" fill="#d5e1f0">10 READING PATHS</text>
   <text x="461" y="370" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.7" fill="#d5e1f0">CHINESE DEEP DIVES</text>
   <g fill="none" stroke="url(#edge)" stroke-width="1.5">
     <path d="M1070 111L1226 173L1185 320L1007 291L1070 111L1185 320M1007 291L1226 173"/>

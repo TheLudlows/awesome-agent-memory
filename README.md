@@ -2,10 +2,10 @@
 
 <img src="assets/cover.svg" alt="Awesome Agent Memory — A research reading room" width="100%" />
 
-<h3>从记住信息，到理解经验</h3>
-<p>一部持续编写的 Agent Memory 中文精读手册。</p>
-<p><sub>19 篇论文 · 5 条阅读路线 · 完整案例 · 方法推演 · 代码与数据 · 实验证据 · 独立评论</sub></p>
-<p><a href="papers/14-hindsight.md">阅读 Hindsight</a> · <a href="#map">知识地图</a> · <a href="#routes">选择路线</a> · <a href="#index">论文目录</a> · <a href="guides/comparison.md">比较与术语</a> · <a href="guides/implementations-and-data.md">代码与数据</a></p>
+<h3>找到证据，记住经验</h3>
+<p>Agent Memory 与 RAG 论文的中文精读。</p>
+<p><sub>34 篇论文 · 10 条阅读路线 · 方法、实验、代码与数据</sub></p>
+<p><a href="papers/14-hindsight.md">阅读 Hindsight</a> · <a href="guides/rag.md">RAG 专题</a> · <a href="#map">知识地图</a> · <a href="#routes">选择路线</a> · <a href="#index">论文目录</a> · <a href="guides/comparison.md">比较与术语</a> · <a href="guides/implementations-and-data.md">代码与数据</a></p>
 
 </div>
 
@@ -15,8 +15,7 @@
 
 本库围绕这些问题读论文：信息如何被保留，怎样被组织和找到，何时需要更新，以及怎样证明过去的经验确实改善了未来的行为。文章从一般编程知识出发，逐步建立直觉，再进入数据结构、必要公式、算法过程与实验解释。
 
-> **收录与修订**  
-> 五条路线涉及的 **19 篇论文已完成详细解析**，各篇包含方法、实例、实验或论证分析、项目实现与数据，以及合并的总结与看法。篇幅随内容而定，具体阅读版本见文末来源。
+RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读懂多份资料，以及答错之后如何定位原因。新增 15 篇解析，与已有的 HippoRAG 2 组成 [16 篇 RAG 阅读路线](guides/rag.md)。
 
 ### 从 Hindsight 开始
 
@@ -83,7 +82,7 @@ flowchart TD
 
 <a id="routes"></a>
 
-## 五条阅读路线
+## Agent Memory 阅读路线
 
 根据目标选择路线。重复出现的论文链接到同一篇解析，编号按原始清单首次出现顺序保留。
 
@@ -164,6 +163,44 @@ flowchart TD
 | 17 | [MemoryArena](papers/17-memoryarena.md) | 记忆能否帮助完成连续依赖任务？ | 检查 Agent 能否把前面任务的经验用于后续相互依赖的任务 | [↗](https://proceedings.mlr.press/v306/he26am.html) |
 | 18 | [LoCoMo](papers/18-locomo.md) | 怎样评价超长期对话记忆？ | 通过长期对话检查事实回忆、跨事件理解、时间关系和回答一致性 | [↗](https://aclanthology.org/2024.acl-long.747/) |
 | 19 | [MemoryAgentBench](papers/19-memoryagentbench.md) | 增量接收信息时有哪些不同记忆能力？ | 逐步输入信息，分别测试检索、测试时学习、长程理解和选择性遗忘 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/fd1eff9dd295df50a41f2521942fa31d-Abstract-Conference.html) |
+
+<a id="rag"></a>
+
+## RAG：从检索到回答
+
+**为什么资料已经找到了，模型还是答错？** 从 [RAG](papers/20-rag.md)、[DPR](papers/21-dpr.md) 和 [FiD](papers/22-fid.md) 开始，分别理解架构、检索与阅读；再按任务深入查询改写、多步检索、文档组织和评测。
+
+[完整阅读路线与英文题名 →](guides/rag.md) · [RAG 代码与数据 →](guides/rag-implementations-and-data.md)
+
+| 目标 | 建议阅读顺序 |
+| :--- | :--- |
+| **先建立完整认识** | [RAG](papers/20-rag.md) → [DPR](papers/21-dpr.md) → [FiD](papers/22-fid.md) → [HyDE](papers/25-hyde.md) → [IRCoT](papers/26-ircot.md) → [Self-RAG](papers/27-self-rag.md) → [Lost in the Middle](papers/31-lost-in-the-middle.md) → [RAGChecker](papers/34-ragchecker.md) |
+| **检索与索引设计** | [DPR](papers/21-dpr.md) → [SPLADE](papers/24-splade.md) → [ColBERTv2](papers/23-colbertv2.md) → [BEIR](papers/32-beir.md) |
+| **长文档与企业知识库** | [RAG](papers/20-rag.md) → [HyDE](papers/25-hyde.md) → [RAPTOR](papers/29-raptor.md) → [GraphRAG](papers/30-graphrag.md) → [Lost in the Middle](papers/31-lost-in-the-middle.md) → [RAGChecker](papers/34-ragchecker.md) |
+| **Agent 与多步检索** | [IRCoT](papers/26-ircot.md) → [Self-RAG](papers/27-self-rag.md) → [CRAG](papers/28-crag.md) → [HippoRAG 2](papers/11-hipporag2.md) |
+| **评测与调优** | [BEIR](papers/32-beir.md) → [Lost in the Middle](papers/31-lost-in-the-middle.md) → [RAGAs](papers/33-ragas.md) → [RAGChecker](papers/34-ragchecker.md) |
+
+### 06 · Retrieval-Augmented Generation
+
+| 编号 | 论文解析 | 核心问题 | 原文 |
+| :---: | :--- | :--- | :---: |
+| 20 | [RAG](papers/20-rag.md) | 外部知识如何参与生成与联合训练？ | [↗](https://arxiv.org/abs/2005.11401) |
+| 21 | [DPR](papers/21-dpr.md) | 如何学习问题与答案段落的匹配？ | [↗](https://aclanthology.org/2020.emnlp-main.550/) |
+| 22 | [FiD](papers/22-fid.md) | 找到很多段资料之后，怎样一起读？ | [↗](https://aclanthology.org/2021.eacl-main.74/) |
+| 23 | [ColBERTv2](papers/23-colbertv2.md) | 多向量怎样兼顾匹配细节与索引成本？ | [↗](https://aclanthology.org/2022.naacl-main.272/) |
+| 24 | [SPLADE](papers/24-splade.md) | 神经语义能力怎样进入倒排索引？ | [↗](https://arxiv.org/abs/2107.05720) |
+| 25 | [HyDE](papers/25-hyde.md) | 假想文档为什么能帮助寻找真实资料？ | [↗](https://aclanthology.org/2023.acl-long.99/) |
+| 26 | [IRCoT](papers/26-ircot.md) | 新事实怎样决定下一次搜索？ | [↗](https://aclanthology.org/2023.acl-long.557/) |
+| 27 | [Self-RAG](papers/27-self-rag.md) | 如何学会检索判断与证据检查？ | [↗](https://arxiv.org/abs/2310.11511) |
+| 28 | [CRAG](papers/28-crag.md) | 第一次没搜对，系统怎样补救？ | [↗](https://arxiv.org/abs/2401.15884) |
+| 29 | [RAPTOR](papers/29-raptor.md) | 如何同时检索细节与高层摘要？ | [↗](https://arxiv.org/abs/2401.18059) |
+| 30 | [GraphRAG](papers/30-graphrag.md) | 怎样回答关于整批资料的问题？ | [↗](https://arxiv.org/abs/2404.16130) |
+| 31 | [Lost in the Middle](papers/31-lost-in-the-middle.md) | 正确证据已经在场，为什么仍然答错？ | [↗](https://aclanthology.org/2024.tacl-1.9/) |
+| 32 | [BEIR](papers/32-beir.md) | 换一个领域，检索模型还可靠吗？ | [↗](https://arxiv.org/abs/2104.08663) |
+| 33 | [RAGAs](papers/33-ragas.md) | 缺少标准答案时，怎样自动检查回答？ | [↗](https://aclanthology.org/2024.eacl-demo.16/) |
+| 34 | [RAGChecker](papers/34-ragchecker.md) | 答错之后，怎样定位该改的环节？ | [↗](https://arxiv.org/abs/2408.08067) |
+
+[HippoRAG 2](papers/11-hipporag2.md) 连接 RAG 与长期记忆，沿用第 11 篇解析。
 
 ## 读完以后，应该能回答什么
 
