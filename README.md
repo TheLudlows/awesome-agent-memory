@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/cover.svg" alt="Awesome Agent Memory — A research reading room" width="100%" />
+<img src="assets/cover.png" alt="Awesome Agent Memory — A research reading room" width="100%" />
 
 <h3>找到证据，记住经验</h3>
 <p>Agent Memory 与 RAG 论文的中文精读。</p>
@@ -57,20 +57,9 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 
 下图是本库用于组织阅读问题的概念地图。它展示需要共同考虑的环节，不表示 19 篇论文采用同一套架构。
 
-```mermaid
-flowchart TD
-    I["交互与任务轨迹"] --> W["保留：事实、事件与技能"]
-    W --> O["组织：分层、笔记与实体关系"]
-    O --> R["访问：检索、选择与上下文管理"]
-    R --> A["使用：回答、规划与行动"]
-    A --> F["反馈：结果、更正与新经验"]
-    F --> W
-    F --> U["演进：反思、归纳与策略学习"]
-    U --> O
-    U --> A
-    E["评测：回忆、更新、推理与任务完成"] -.-> R
-    E -.-> A
-```
+![Agent 记忆结构与反馈流程](assets/diagrams/memory-map.png)
+
+[查看图源](assets/diagrams/memory-map.mmd)
 
 | 沿地图阅读时要问什么 | 可从哪些论文进入 |
 | :--- | :--- |

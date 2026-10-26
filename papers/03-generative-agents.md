@@ -86,17 +86,9 @@ $$
 
 执行过程中会接收新的观察。系统判断是否需要反应，如果需要，就修改后续安排。例如原本准备学习，但遇到朋友询问派对，可以先交流，再返回原有任务。计划负责保持连续，反应机制负责适应变化。[1，§4.3]
 
-```mermaid
-flowchart TD
-    A[观察到事件] --> B[写入记忆流]
-    B --> C[按三种分数检索]
-    C --> D[计划与即时反应]
-    D --> E[环境中的新行为]
-    E --> A
-    B --> F[提问并综合证据]
-    F --> G[带来源的反思]
-    G --> B
-```
+![generative-agents 运行流程](../assets/diagrams/03-generative-agents.png)
+
+[查看图源](../assets/diagrams/03-generative-agents.mmd)
 
 <a id="s6"></a>
 
