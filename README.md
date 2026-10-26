@@ -4,7 +4,7 @@
 
 <h3>找到证据，记住经验</h3>
 <p>Agent Memory 与 RAG 论文的中文精读。</p>
-<p><sub>34 篇论文 · 10 条阅读路线 · 方法、实验、代码与数据</sub></p>
+<p><sub>37 篇论文 · 10 条阅读路线 · 方法、实验、代码与数据</sub></p>
 <p><a href="papers/14-hindsight.md">阅读 Hindsight</a> · <a href="guides/rag.md">RAG 专题</a> · <a href="#map">知识地图</a> · <a href="#routes">选择路线</a> · <a href="#index">论文目录</a> · <a href="guides/comparison.md">比较与术语</a> · <a href="guides/implementations-and-data.md">代码与数据</a></p>
 
 </div>
@@ -14,6 +14,8 @@
 一个 Agent 可以保存全部聊天，却依然记错日期、忽略新决定，或者把自己的建议当成已经确认的事实。它也可能答对历史问题，却无法在下一次行动中使用这段经验。
 
 本库围绕这些问题读论文：信息如何被保留，怎样被组织和找到，何时需要更新，以及怎样证明过去的经验确实改善了未来的行为。文章从一般编程知识出发，逐步建立直觉，再进入数据结构、必要公式、算法过程与实验解释。
+
+Agent Memory 部分共 22 篇。新增 [Zep](papers/35-zep.md)、[GAM](papers/36-gam.md) 与 [ACE](papers/37-ace.md)，分别讨论事实的时间变化、完整历史的按需回查，以及经验手册的持续更新。
 
 RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读懂多份资料，以及答错之后如何定位原因。新增 15 篇解析，与已有的 HippoRAG 2 组成 [16 篇 RAG 阅读路线](guides/rag.md)。
 
@@ -55,7 +57,7 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 
 ## 一张地图：记忆如何影响行动
 
-下图是本库用于组织阅读问题的概念地图。它展示需要共同考虑的环节，不表示 19 篇论文采用同一套架构。
+下图是本库用于组织阅读问题的概念地图。它展示需要共同考虑的环节，不表示各篇论文采用同一套架构。
 
 ![Agent 记忆结构与反馈流程](assets/diagrams/memory-map.png)
 
@@ -64,23 +66,23 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 | 沿地图阅读时要问什么 | 可从哪些论文进入 |
 | :--- | :--- |
 | 应当保存原始记录、压缩事实，还是代码技能？ | MemoryBank、Generative Agents、Voyager |
-| 记忆如何组织，才能在需要时被找到？ | MemGPT、MemoryOS、HippoRAG 2、A-Mem |
-| 新证据如何改变旧认识，维护成本又在哪里？ | Mem0、LightMem、Hindsight |
-| 一次经历怎样变成下一次任务可用的策略？ | Reflexion、ReasoningBank、Memory-R1 |
+| 记忆如何组织，才能在需要时被找到？ | MemGPT、MemoryOS、HippoRAG 2、A-Mem、GAM |
+| 新证据如何改变旧认识，维护成本又在哪里？ | Mem0、LightMem、Hindsight、Zep |
+| 一次经历怎样变成下一次任务可用的策略？ | Reflexion、ReasoningBank、Memory-R1、ACE |
 | 能回答历史问题，是否足以说明记忆有效？ | LongMemEval、LoCoMo、MemoryAgentBench、MemoryArena |
 
 <a id="routes"></a>
 
 ## Agent Memory 阅读路线
 
-根据目标选择路线。重复出现的论文链接到同一篇解析，编号按原始清单首次出现顺序保留。
+根据目标选择路线。重复出现的论文链接到同一篇解析，原始编号保留，新增论文从现有目录继续编号。
 
 | 你的目标 | 建议阅读顺序 |
 | :--- | :--- |
 | **建立完整的学术认识** | [TOIS 记忆机制综述](papers/01-memory-survey.md) → [CoALA](papers/02-coala.md) → [Generative Agents](papers/03-generative-agents.md) → [Reflexion](papers/04-reflexion.md) → [Voyager](papers/05-voyager.md) |
-| **研究长期用户记忆** | [MemoryBank](papers/06-memorybank.md) → [LongMemEval](papers/07-longmemeval.md) → [MemoryOS](papers/08-memoryos.md) → [Mem0](papers/09-mem0.md) |
-| **设计记忆基础设施** | [CoALA](papers/02-coala.md) → [MemGPT](papers/10-memgpt.md) → [HippoRAG 2](papers/11-hipporag2.md) → [A-Mem](papers/12-amem.md) → [LightMem](papers/13-lightmem.md) → [Hindsight](papers/14-hindsight.md) |
-| **研究持续改进的 Agent** | [Reflexion](papers/04-reflexion.md) → [Voyager](papers/05-voyager.md) → [ReasoningBank](papers/15-reasoningbank.md) → [Memory-R1](papers/16-memory-r1.md) → [MemoryArena](papers/17-memoryarena.md) |
+| **研究长期用户记忆** | [MemoryBank](papers/06-memorybank.md) → [LongMemEval](papers/07-longmemeval.md) → [MemoryOS](papers/08-memoryos.md) → [Mem0](papers/09-mem0.md) → [Zep](papers/35-zep.md) |
+| **设计记忆基础设施** | [CoALA](papers/02-coala.md) → [MemGPT](papers/10-memgpt.md) → [HippoRAG 2](papers/11-hipporag2.md) → [A-Mem](papers/12-amem.md) → [LightMem](papers/13-lightmem.md) → [Hindsight](papers/14-hindsight.md) → [Zep](papers/35-zep.md) → [GAM](papers/36-gam.md) |
+| **研究持续改进的 Agent** | [Reflexion](papers/04-reflexion.md) → [Voyager](papers/05-voyager.md) → [ReasoningBank](papers/15-reasoningbank.md) → [ACE](papers/37-ace.md) → [Memory-R1](papers/16-memory-r1.md) → [MemoryArena](papers/17-memoryarena.md) |
 | **建立评测体系** | [LongMemEval](papers/07-longmemeval.md) → [LoCoMo](papers/18-locomo.md) → [MemoryAgentBench](papers/19-memoryagentbench.md) → [MemoryArena](papers/17-memoryarena.md) |
 
 先按目标选择路线，再根据下表补齐前置知识。
@@ -97,7 +99,7 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 
 ## 目录
 
-编号保留五条原始路线中首次出现的顺序；分卷按研究问题组织。同一篇论文只维护一份解析。各篇均提供章节目录，方便按问题查阅。
+前 19 篇保留原始编号，后续论文按加入顺序编号；分卷按研究问题组织。同一篇论文只维护一份解析。各篇均提供章节目录，方便按问题查阅。
 
 ### 01 · Foundations
 
@@ -132,6 +134,8 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 | 12 | [A-Mem](papers/12-amem.md) | 新记忆怎样改变旧笔记的组织？ | 把记忆写成互相关联的笔记，并让新信息推动旧笔记的理解更新 | [↗](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
 | 13 | [LightMem](papers/13-lightmem.md) | 如何降低记忆维护的在线开销？ | 先压缩和按主题整理，再把昂贵的长期维护移到离线阶段 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html) |
 | 14 | [Hindsight](papers/14-hindsight.md) | 怎样区分证据、归纳和主观判断？ | 分清事实、经历、综合观察和观点，再用保留、回忆、反思三个操作访问 | [↗](https://aclanthology.org/2026.acl-demo.27/) |
+| 35 | [Zep](papers/35-zep.md) | 事实发生变化后怎样回答历史问题？ | 用带来源与时间的图维护事实及其有效期 | [↗](https://arxiv.org/abs/2501.13956) |
+| 36 | [GAM](papers/36-gam.md) | 如何找回摘要没有保留的细节？ | 保留完整页面，用轻量记忆引导查询时的多轮查证 | [↗](https://arxiv.org/abs/2511.18423) |
 
 ### 04 · Learning from Experience
 
@@ -141,6 +145,7 @@ RAG 专题从另一个方向接近这些问题：怎样找到证据、怎样读�
 | :---: | :--- | :--- | :--- | :---: |
 | 15 | [ReasoningBank](papers/15-reasoningbank.md) | 如何从轨迹中提炼可迁移的策略？ | 从成功与失败轨迹中提炼可迁移的策略，再指导后续任务 | [↗](https://arxiv.org/abs/2509.25140) |
 | 16 | [Memory-R1](papers/16-memory-r1.md) | 记忆管理与使用能否通过训练改进？ | 通过强化学习训练模型，让它更会管理记忆，也更会筛选和使用记忆 | [↗](https://aclanthology.org/2026.acl-long.583/) |
+| 37 | [ACE](papers/37-ace.md) | 经验怎样持续积累而不被反复总结丢失？ | 通过执行、反思和整理产生条目化的增量上下文 | [↗](https://arxiv.org/abs/2510.04618) |
 
 ### 05 · Evaluation
 

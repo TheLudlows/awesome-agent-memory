@@ -6,7 +6,7 @@
 
 这份索引帮助你从论文走到代码和数据。每篇文章的“项目实现与数据”一节解释了该从哪里读、输入输出是什么，以及怎样观察方法是否真的起作用。
 
-**核查日期：2026-10-24。** 已检查作者仓库、相关源码入口及数据说明；未安装运行全部项目，也未重新复现实验分数。下表的“公开”指找到对应资源，不代表能在当前环境下一键复现。各项目的代码、数据与模型权重应分别遵守其许可。
+**核查日期：原始 19 篇为 2026-10-24；新增 Zep、GAM、ACE 为 2026-10-26。** 已检查作者仓库、相关源码入口及数据说明；未安装运行全部项目，也未重新复现实验分数。下表的“公开”指找到对应资源，不代表能在当前环境下一键复现。各项目的代码、数据与模型权重应分别遵守其许可。
 
 | 论文 | 作者项目／资源 | 数据或运行产物 | 阅读重点 |
 | :--- | :--- | :--- | :--- |
@@ -29,6 +29,9 @@
 | [17 MemoryArena](../papers/17-memoryarena.md#implementation) | [Agent／环境／记忆框架](https://github.com/ZexueHe/MemoryArena) | [依赖任务组](https://huggingface.co/datasets/ZexueHe/memoryarena)与各环境数据 | 一组任务如何连续执行、如何重置和保留状态 |
 | [18 LoCoMo](../papers/18-locomo.md#implementation) | [数据与任务代码](https://github.com/snap-research/locomo) | `locomo10.json`、生成摘要与证据标注 | 生成材料与人工参考答案不能混用 |
 | [19 MemoryAgentBench](../papers/19-memoryagentbench.md#implementation) | [评测框架](https://github.com/HUST-AI-HYZ/MemoryAgentBench) | [增量输入与多问题数据](https://huggingface.co/datasets/ai-hyz/MemoryAgentBench) | 数据行、问题数、切块与任务指标分别记录 |
+| [35 Zep](../papers/35-zep.md#implementation) | [Graphiti](https://github.com/getzep/graphiti) | DMR、LongMemEval；图构建评测入口 | 开源框架与托管服务分开，检查时间与来源字段 |
+| [36 GAM](../papers/36-gam.md#implementation) | [论文研究目录](https://github.com/VectorSpaceLab/general-agentic-memory/tree/main/research) | LoCoMo、HotpotQA 改造集、RULER、NarrativeQA | 区分轻量记忆、完整页面和查询时整合结果 |
+| [37 ACE](../papers/37-ace.md#implementation) | [ACE](https://github.com/ace-agent/ace) · [AppWorld 实验](https://github.com/ace-agent/ace-appworld) | AppWorld、FiNER、Formula；playbook 与操作日志 | 论文整理机制与当前主要支持 ADD 的实现有边界 |
 
 ## 怎样读懂一份记忆实验的数据
 
