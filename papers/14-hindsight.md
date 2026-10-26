@@ -111,7 +111,11 @@ Observation 尽量不受行为偏好影响；Opinion 可以表达带立场的评
 | Recall，回忆 | 查询、范围条件和上下文预算 | 多路找候选、融合、重排、控制返回长度 | 相关记忆集合 |
 | Reflect，反思 | 问题、行为配置和记忆访问能力 | 查找与综合证据，回答，必要时形成或修正观点 | 回答及可能的观点变化 |
 
-![hindsight 运行流程](../assets/diagrams/14-hindsight.png)
+<p align="center">
+  <a href="../assets/diagrams/14-hindsight.png">
+    <img src="../assets/diagrams/14-hindsight.png" alt="hindsight 运行流程" width="800" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/14-hindsight.mmd)
 

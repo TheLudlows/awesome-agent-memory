@@ -86,7 +86,11 @@ $$
 
 执行过程中会接收新的观察。系统判断是否需要反应，如果需要，就修改后续安排。例如原本准备学习，但遇到朋友询问派对，可以先交流，再返回原有任务。计划负责保持连续，反应机制负责适应变化。[1，§4.3]
 
-![generative-agents 运行流程](../assets/diagrams/03-generative-agents.png)
+<p align="center">
+  <a href="../assets/diagrams/03-generative-agents.png">
+    <img src="../assets/diagrams/03-generative-agents.png" alt="generative-agents 运行流程" width="640" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/03-generative-agents.mmd)
 

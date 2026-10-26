@@ -86,7 +86,11 @@ LPM 包含用户画像、用户特征、用户知识及助手相关信息。技�
 
 STM 贡献当前上下文；MTM 先选相关主题段，再在段内选相关页；LPM 提供与问题相关的知识和个人信息，最后组合成 prompt 生成回答。[1，§3.4–§3.5]
 
-![memoryos 运行流程](../assets/diagrams/08-memoryos.png)
+<p align="center">
+  <a href="../assets/diagrams/08-memoryos.png">
+    <img src="../assets/diagrams/08-memoryos.png" alt="memoryos 运行流程" width="800" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/08-memoryos.mmd)
 

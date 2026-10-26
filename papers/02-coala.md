@@ -76,7 +76,11 @@
 
 论文把决策描述为反复发生的循环。Agent 根据观察和工作记忆提出候选动作，通过推理与检索评估，选出要执行的外部动作或学习动作，再接收后续观察。
 
-![coala 运行流程](../assets/diagrams/02-coala.png)
+<p align="center">
+  <a href="../assets/diagrams/02-coala.png">
+    <img src="../assets/diagrams/02-coala.png" alt="coala 运行流程" width="540" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/02-coala.mmd)
 

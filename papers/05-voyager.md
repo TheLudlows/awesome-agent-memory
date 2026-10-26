@@ -65,7 +65,11 @@ Voyager 不把第一版代码直接永久收录，而是循环执行并修改。
 
 作者区分三种反馈：环境反馈告诉你发生了什么；执行错误告诉你程序在哪里出问题；自验证判断当前结果是否已经满足目标。它们分别回答“世界变成怎样”“代码有没有错”“任务是否完成”。程序能运行，不代表任务已完成，因此第三类反馈不能省略。[1，§2.3]
 
-![voyager 运行流程](../assets/diagrams/05-voyager.png)
+<p align="center">
+  <a href="../assets/diagrams/05-voyager.png">
+    <img src="../assets/diagrams/05-voyager.png" alt="voyager 运行流程" width="500" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/05-voyager.mmd)
 

@@ -45,7 +45,11 @@ RAG 把知识分成两部分。模型参数保存语言能力和训练中获得�
 
 设问题为 x，候选文档为 z，完整答案为 y。RAG-Sequence 的核心可简写为：
 
-![RAG-Sequence：对各候选文档条件下的完整答案概率，按检索概率加权求和。](../assets/formulas/20-rag-sequence.png)
+<p align="center">
+  <a href="../assets/formulas/20-rag-sequence.png">
+    <img src="../assets/formulas/20-rag-sequence.png" alt="RAG-Sequence：对各候选文档条件下的完整答案概率，按检索概率加权求和。" width="560" />
+  </a>
+</p>
 
 [公式源码](../assets/formulas/20-rag-sequence.tex)
 
@@ -53,7 +57,11 @@ RAG 把知识分成两部分。模型参数保存语言能力和训练中获得�
 
 RAG-Token 把这个加权动作放到每一个输出 token 上：
 
-![RAG-Token：在每个输出位置对文档条件概率加权求和，再将各位置的概率相乘。](../assets/formulas/20-rag-token.png)
+<p align="center">
+  <a href="../assets/formulas/20-rag-token.png">
+    <img src="../assets/formulas/20-rag-token.png" alt="RAG-Token：在每个输出位置对文档条件概率加权求和，再将各位置的概率相乘。" width="580" />
+  </a>
+</p>
 
 [公式源码](../assets/formulas/20-rag-token.tex)
 

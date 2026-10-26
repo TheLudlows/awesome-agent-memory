@@ -75,7 +75,11 @@ MemoryArena 针对这一差距设计跨会话、子任务相互依赖的环境�
 
 Agent 在当前会话读取指令、工具观察与会话内轨迹，并从持久记忆取回相关信息，然后选择动作。任务结束后，把这段经历写入记忆，继续下一会话。
 
-![memoryarena 运行流程](../assets/diagrams/17-memoryarena.png)
+<p align="center">
+  <a href="../assets/diagrams/17-memoryarena.png">
+    <img src="../assets/diagrams/17-memoryarena.png" alt="memoryarena 运行流程" width="400" />
+  </a>
+</p>
 
 [查看图源](../assets/diagrams/17-memoryarena.mmd)
 

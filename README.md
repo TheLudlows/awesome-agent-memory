@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/cover.png" alt="Awesome Agent Memory" width="100%" />
+<a href="assets/cover.png"><img src="assets/cover.png" alt="Awesome Agent Memory" width="100%" /></a>
 
 <h3>Agent Memory · RAG</h3>
 
@@ -169,7 +169,11 @@ Agent 怎样记住过去，又怎样用过去的经验完成下一次任务？
 
 这张图用于梳理阅读中的概念关系，各篇论文的具体架构有所不同。
 
-![Agent 记忆结构与反馈流程](assets/diagrams/memory-map.png)
+<p align="center">
+  <a href="assets/diagrams/memory-map.png">
+    <img src="assets/diagrams/memory-map.png" alt="Agent 记忆结构与反馈流程" width="800" />
+  </a>
+</p>
 
 [查看图源](assets/diagrams/memory-map.mmd)
 
