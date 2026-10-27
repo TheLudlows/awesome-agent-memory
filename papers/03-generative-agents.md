@@ -1,5 +1,9 @@
 # Generative Agents：生成式智能体：人类行为的交互式模拟
 
+**阅读建议：了解即可** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+抓住经历记录、检索、反思和计划怎样接起来。重点区分原始事件与生成的高层认识，并看评估中的行为可信度如何定义；模拟人物表现自然，不能直接推导出事实记忆可靠。
+
 > 记录经历、总结高层认识，再用相关记忆指导计划与行为。
 
 **英文题名**：Generative Agents: Interactive Simulacra of Human Behavior  

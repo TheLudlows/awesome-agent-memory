@@ -1,5 +1,9 @@
 # HippoRAG 2：从 RAG 到记忆：大语言模型的非参数持续学习
 
+**阅读建议：精读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+精读图构建、查询到三元组的匹配、识别过滤、段落与短语种子，以及 PPR 排序。用小图解释一段原本不够相似的证据为什么进入结果，再核对组件消融；图上的高分和连通关系本身不是答案的证明。
+
 > 借助图结构和 Personalized PageRank 找到不能只靠相似度定位的关联证据。
 
 **英文题名**：From RAG to Memory: Non-Parametric Continual Learning for Large Language Models  

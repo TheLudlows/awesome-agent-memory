@@ -1,5 +1,9 @@
 # LoCoMo：评估大语言模型智能体的超长期对话记忆
 
+**阅读建议：了解即可** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+先读数据生成与核验、问题类别和评分方式，使用数据时再细读协议。特别核对样本筛选、类别是否全部计入、回答评分是否一致；不同论文都写 LoCoMo，不意味着数字可以直接比较。
+
 > 通过长期对话检查事实回忆、跨事件理解、时间关系和回答一致性。
 
 **英文题名**：Evaluating Very Long-Term Conversational Memory of LLM Agents  

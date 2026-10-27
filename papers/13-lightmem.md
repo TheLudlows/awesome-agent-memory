@@ -1,5 +1,9 @@
 # LightMem：轻量、高效的记忆增强生成
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点看哪些工作在写入时完成，哪些移到离线维护，以及压缩保留了什么。读成本表时分别核对建库、维护、查询和回答开销；离线更新降低在线负担，也可能影响新信息何时可用。
+
 > 先压缩和按主题整理，再把昂贵的长期维护移到离线阶段。
 
 **英文题名**：LightMem: Lightweight and Efficient Memory-Augmented Generation  

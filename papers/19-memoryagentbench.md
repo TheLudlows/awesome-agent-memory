@@ -1,5 +1,9 @@
 # MemoryAgentBench：通过增量式多轮交互评估大语言模型智能体的记忆
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点读增量输入顺序、四类能力、记忆更新与测试的时机。确认方法是否能访问未来信息、每轮可使用哪些历史，以及遗忘怎样计分；这些协议细节比总榜排名更值得迁移到自己的评测。
+
 > 逐步输入信息，分别测试检索、测试时学习、长程理解和选择性遗忘。
 
 **英文题名**：Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions  

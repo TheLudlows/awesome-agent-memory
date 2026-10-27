@@ -1,5 +1,9 @@
 # Memory-R1：通过强化学习提升大语言模型智能体管理和利用记忆的能力
 
+**阅读建议：了解即可** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+先看状态、动作、奖励分别是什么，以及管理记忆和使用记忆如何分工。只有准备训练记忆策略时，才值得深挖训练细节；重点核对奖励是否只鼓励当前答对，以及换任务后策略能否继续有效。
+
 > 通过强化学习训练模型，让它更会管理记忆，也更会筛选和使用记忆。
 
 **英文题名**：Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning  

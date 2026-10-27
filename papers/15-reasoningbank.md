@@ -1,5 +1,9 @@
 # ReasoningBank：通过推理记忆扩展智能体的自我进化能力
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点读如何从成功与失败轨迹提取经验、检索经验并用于新任务。拿一条经验判断它是可迁移策略还是原任务答案的改写；还应区分记忆机制与测试时增加采样、探索预算各自的贡献。
+
 > 从成功与失败轨迹中提炼可迁移的策略，再指导后续任务。
 
 **英文题名**：ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory  

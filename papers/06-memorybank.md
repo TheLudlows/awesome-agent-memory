@@ -1,5 +1,9 @@
 # MemoryBank：通过长期记忆增强大语言模型
 
+**阅读建议：了解即可** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+看懂对话、用户认识和遗忘机制的组织方式即可。需要追问的是：被强化的记忆如何选中，过时偏好怎样修正，遗忘是否真的改善任务结果。做长期陪伴或个性化助手时再深入数据与评测。
+
 > 保存长期对话与用户认识，并借助遗忘和强化机制管理记忆。
 
 **英文题名**：MemoryBank: Enhancing Large Language Models with Long-Term Memory  

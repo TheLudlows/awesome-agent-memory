@@ -1,5 +1,9 @@
 # LongMemEval：聊天助手长期交互记忆的基准评测
 
+**阅读建议：精读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+精读数据构造、五类能力、答案与证据标注，以及索引—检索—阅读的诊断实验。读完应能把一次失败定位为没保存、没召回、没读对或不该回答；同时检查会话切分、时间信息和检索预算如何影响成绩。
+
 > 检查长时间交互中的事实提取、跨会话推理、更新、时间判断与拒答。
 
 **英文题名**：LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory  

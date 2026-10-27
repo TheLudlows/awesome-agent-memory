@@ -1,5 +1,9 @@
 # ACE：让经验逐条积累，而不是反复重写整段记忆
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点读条目 ID、反馈计数与增量更新如何避免反复重写导致的信息丢失。对照离线训练与在线先预测后更新的协议，并核查代码实际支持的操作；提示中允许更新或删除，不等于发布实现已经完整执行。
+
 > 一条有用的经验，应当保住它的条件、操作和例外，才能在下一次任务中继续起作用。
 
 **英文题名**：Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models  

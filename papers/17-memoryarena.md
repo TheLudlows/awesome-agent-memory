@@ -1,5 +1,9 @@
 # MemoryArena：在相互依赖的多会话智能体任务中评测智能体记忆
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点读多会话任务之间的依赖、会话重置时保留什么，以及成功如何判定。挑一条任务链说明前次经验怎样改变后续行动；能回忆一条事实与能据此完成任务，是两种不同能力。
+
 > 检查 Agent 能否把前面任务的经验用于后续相互依赖的任务。
 
 **英文题名**：Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks  

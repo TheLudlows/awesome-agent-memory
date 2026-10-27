@@ -4,11 +4,12 @@
 
 <h3>Agent Memory · RAG</h3>
 
-<p>关于记忆、检索与经验学习的论文精读</p>
+<p>关于记忆、检索与经验学习的论文解析</p>
 <p><sub>37 篇中文解析 · 22 篇记忆研究 · 15 篇 RAG 专题论文</sub></p>
 
 <p>
 <a href="#start">从哪里开始</a> ·
+<a href="#priorities">精读与选读</a> ·
 <a href="#routes">阅读路线</a> ·
 <a href="#index">论文目录</a> ·
 <a href="#resources">代码与数据</a>
@@ -38,6 +39,22 @@ Agent 怎样记住过去，又怎样用过去的经验完成下一次任务？
 | 摘要漏掉的细节，后来还能找回来吗？ | [GAM](papers/36-gam.md) |
 | 做过一次的任务，怎样留下以后能用的经验？ | [Reflexion](papers/04-reflexion.md)、[ACE](papers/37-ace.md) |
 | 答错了，怎样区分没找到证据与没有用好证据？ | [LongMemEval](papers/07-longmemeval.md)、[RAGChecker](papers/34-ragchecker.md) |
+
+<a id="priorities"></a>
+
+## 哪些值得精读
+
+如果目的是设计、实现和评估 Agent 记忆系统，建议把时间集中在下面五篇。这里按学习价值分配阅读精力，不是按发表场所或榜单成绩给论文评级。**了解即可**表示先掌握核心思路；做对应方向的研究时，可以提高优先级。
+
+| 阅读投入 | 论文 | 读到什么程度 |
+| :--- | :--- | :--- |
+| **精读** | [LongMemEval](papers/07-longmemeval.md)、[MemGPT](papers/10-memgpt.md)、[HippoRAG 2](papers/11-hipporag2.md)、[Hindsight](papers/14-hindsight.md)、[Zep](papers/35-zep.md) | 能走通数据与执行过程，解释关键设计，并判断实验支持了哪些结论 |
+| **重点选读** | [Voyager](papers/05-voyager.md)、[LightMem](papers/13-lightmem.md)、[ReasoningBank](papers/15-reasoningbank.md)、[MemoryArena](papers/17-memoryarena.md)、[MemoryAgentBench](papers/19-memoryagentbench.md)、[GAM](papers/36-gam.md)、[ACE](papers/37-ace.md) | 读方法中最有区别的部分、关键消融与成本；按需要深入代码 |
+| **了解即可** | [TOIS 记忆机制综述](papers/01-memory-survey.md)、[CoALA](papers/02-coala.md)、[Generative Agents](papers/03-generative-agents.md)、[Reflexion](papers/04-reflexion.md)、[MemoryBank](papers/06-memorybank.md)、[MemoryOS](papers/08-memoryos.md)、[Mem0](papers/09-mem0.md)、[A-Mem](papers/12-amem.md)、[Memory-R1](papers/16-memory-r1.md)、[LoCoMo](papers/18-locomo.md) | 理解解决的问题、核心做法和适用边界，暂不逐节研读 |
+
+建议顺序：**LongMemEval → MemGPT → HippoRAG 2 → Zep → Hindsight**。先知道怎样测，再学习上下文调度、关联检索和有时间与来源的记忆组织。
+
+研究从经验中学习时，可把 Voyager、ReasoningBank、ACE 提高到精读；准备训练记忆策略时，再深入 Memory-R1。综述与 CoALA 适合作为随时回查的地图，无需从头精读到尾。
 
 <a id="routes"></a>
 
@@ -75,50 +92,50 @@ Agent 怎样记住过去，又怎样用过去的经验完成下一次任务？
 
 ### 01 · 记忆与认知架构
 
-| 论文解析 | 主要内容 | 原文 |
-| :--- | :--- | :---: |
-| [TOIS 记忆机制综述](papers/01-memory-survey.md) | 用“来源、形式、操作、评测”给 Agent 记忆建立分类地图 | [↗](https://dl.acm.org/doi/10.1145/3748302) |
-| [CoALA](papers/02-coala.md) | 把工作记忆、经历、知识和技能放到统一的决策框架中 | [↗](https://openreview.net/forum?id=1i6ZCvflQJ) |
-| [Generative Agents](papers/03-generative-agents.md) | 记录经历、总结高层认识，再用相关记忆指导计划与行为 | [↗](https://arxiv.org/abs/2304.03442) |
+| 论文解析 | 建议 | 主要内容 | 原文 |
+| :--- | :--- | :--- | :---: |
+| [TOIS 记忆机制综述](papers/01-memory-survey.md) | 了解即可 | 用“来源、形式、操作、评测”给 Agent 记忆建立分类地图 | [↗](https://dl.acm.org/doi/10.1145/3748302) |
+| [CoALA](papers/02-coala.md) | 了解即可 | 把工作记忆、经历、知识和技能放到统一的决策框架中 | [↗](https://openreview.net/forum?id=1i6ZCvflQJ) |
+| [Generative Agents](papers/03-generative-agents.md) | 了解即可 | 记录经历、总结高层认识，再用相关记忆指导计划与行为 | [↗](https://arxiv.org/abs/2304.03442) |
 
 ### 02 · 长期对话与用户记忆
 
-| 论文解析 | 主要内容 | 原文 |
-| :--- | :--- | :---: |
-| [MemoryBank](papers/06-memorybank.md) | 保存长期对话与用户认识，并借助遗忘和强化机制管理记忆 | [↗](https://ojs.aaai.org/index.php/AAAI/article/view/29946) |
-| [MemoryOS](papers/08-memoryos.md) | 用短期、中期和长期个人记忆管理近期上下文、主题内容与稳定画像 | [↗](https://aclanthology.org/2025.emnlp-main.1318/) |
-| [Mem0](papers/09-mem0.md) | 把新对话提取为候选事实，再与旧记忆比较后增删改或忽略 | [↗](https://arxiv.org/abs/2504.19413) |
+| 论文解析 | 建议 | 主要内容 | 原文 |
+| :--- | :--- | :--- | :---: |
+| [MemoryBank](papers/06-memorybank.md) | 了解即可 | 保存长期对话与用户认识，并借助遗忘和强化机制管理记忆 | [↗](https://ojs.aaai.org/index.php/AAAI/article/view/29946) |
+| [MemoryOS](papers/08-memoryos.md) | 了解即可 | 用短期、中期和长期个人记忆管理近期上下文、主题内容与稳定画像 | [↗](https://aclanthology.org/2025.emnlp-main.1318/) |
+| [Mem0](papers/09-mem0.md) | 了解即可 | 把新对话提取为候选事实，再与旧记忆比较后增删改或忽略 | [↗](https://arxiv.org/abs/2504.19413) |
 
 ### 03 · 记忆组织与访问
 
-| 论文解析 | 主要内容 | 原文 |
-| :--- | :--- | :---: |
-| [MemGPT](papers/10-memgpt.md) | 让模型借助工具在有限上下文与外部存储之间调入、调出信息 | [↗](https://arxiv.org/abs/2310.08560) |
-| [HippoRAG 2](papers/11-hipporag2.md) | 借助图结构和 Personalized PageRank 找到不能只靠相似度定位的关联证据 | [↗](https://proceedings.mlr.press/v267/gutierrez25a.html) |
-| [A-Mem](papers/12-amem.md) | 把记忆写成互相关联的笔记，并让新信息推动旧笔记的理解更新 | [↗](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
-| [LightMem](papers/13-lightmem.md) | 先压缩和按主题整理，再把昂贵的长期维护移到离线阶段 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html) |
-| [Hindsight](papers/14-hindsight.md) | 分清事实、经历、综合观察和观点，再用保留、回忆、反思三个操作访问 | [↗](https://aclanthology.org/2026.acl-demo.27/) |
-| [Zep](papers/35-zep.md) | 用带来源与时间的图维护事实及其有效期 | [↗](https://arxiv.org/abs/2501.13956) |
-| [GAM](papers/36-gam.md) | 保留完整页面，用轻量记忆引导查询时的多轮查证 | [↗](https://arxiv.org/abs/2511.18423) |
+| 论文解析 | 建议 | 主要内容 | 原文 |
+| :--- | :--- | :--- | :---: |
+| [MemGPT](papers/10-memgpt.md) | 精读 | 让模型借助工具在有限上下文与外部存储之间调入、调出信息 | [↗](https://arxiv.org/abs/2310.08560) |
+| [HippoRAG 2](papers/11-hipporag2.md) | 精读 | 借助图结构和 Personalized PageRank 找到不能只靠相似度定位的关联证据 | [↗](https://proceedings.mlr.press/v267/gutierrez25a.html) |
+| [A-Mem](papers/12-amem.md) | 了解即可 | 把记忆写成互相关联的笔记，并让新信息推动旧笔记的理解更新 | [↗](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html) |
+| [LightMem](papers/13-lightmem.md) | 重点选读 | 先压缩和按主题整理，再把昂贵的长期维护移到离线阶段 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html) |
+| [Hindsight](papers/14-hindsight.md) | 精读 | 分清事实、经历、综合观察和观点，再用保留、回忆、反思三个操作访问 | [↗](https://aclanthology.org/2026.acl-demo.27/) |
+| [Zep](papers/35-zep.md) | 精读 | 用带来源与时间的图维护事实及其有效期 | [↗](https://arxiv.org/abs/2501.13956) |
+| [GAM](papers/36-gam.md) | 重点选读 | 保留完整页面，用轻量记忆引导查询时的多轮查证 | [↗](https://arxiv.org/abs/2511.18423) |
 
 ### 04 · 从经验中学习
 
-| 论文解析 | 主要内容 | 原文 |
-| :--- | :--- | :---: |
-| [Reflexion](papers/04-reflexion.md) | 把失败反馈变成可执行的文字教训，供下一次尝试使用 | [↗](https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html) |
-| [Voyager](papers/05-voyager.md) | 把做成功的操作保存为代码技能，后续检索、组合并复用 | [↗](https://arxiv.org/abs/2305.16291) |
-| [ReasoningBank](papers/15-reasoningbank.md) | 从成功与失败轨迹中提炼可迁移的策略，再指导后续任务 | [↗](https://arxiv.org/abs/2509.25140) |
-| [Memory-R1](papers/16-memory-r1.md) | 通过强化学习训练模型，让它更会管理记忆，也更会筛选和使用记忆 | [↗](https://aclanthology.org/2026.acl-long.583/) |
-| [ACE](papers/37-ace.md) | 通过执行、反思和整理产生条目化的增量上下文 | [↗](https://arxiv.org/abs/2510.04618) |
+| 论文解析 | 建议 | 主要内容 | 原文 |
+| :--- | :--- | :--- | :---: |
+| [Reflexion](papers/04-reflexion.md) | 了解即可 | 把失败反馈变成可执行的文字教训，供下一次尝试使用 | [↗](https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html) |
+| [Voyager](papers/05-voyager.md) | 重点选读 | 把做成功的操作保存为代码技能，后续检索、组合并复用 | [↗](https://arxiv.org/abs/2305.16291) |
+| [ReasoningBank](papers/15-reasoningbank.md) | 重点选读 | 从成功与失败轨迹中提炼可迁移的策略，再指导后续任务 | [↗](https://arxiv.org/abs/2509.25140) |
+| [Memory-R1](papers/16-memory-r1.md) | 了解即可 | 通过强化学习训练模型，让它更会管理记忆，也更会筛选和使用记忆 | [↗](https://aclanthology.org/2026.acl-long.583/) |
+| [ACE](papers/37-ace.md) | 重点选读 | 通过执行、反思和整理产生条目化的增量上下文 | [↗](https://arxiv.org/abs/2510.04618) |
 
 ### 05 · 记忆评测
 
-| 论文解析 | 主要内容 | 原文 |
-| :--- | :--- | :---: |
-| [LongMemEval](papers/07-longmemeval.md) | 检查长时间交互中的事实提取、跨会话推理、更新、时间判断与拒答 | [↗](https://arxiv.org/abs/2410.10813) |
-| [MemoryArena](papers/17-memoryarena.md) | 检查 Agent 能否把前面任务的经验用于后续相互依赖的任务 | [↗](https://proceedings.mlr.press/v306/he26am.html) |
-| [LoCoMo](papers/18-locomo.md) | 通过长期对话检查事实回忆、跨事件理解、时间关系和回答一致性 | [↗](https://aclanthology.org/2024.acl-long.747/) |
-| [MemoryAgentBench](papers/19-memoryagentbench.md) | 逐步输入信息，分别测试检索、测试时学习、长程理解和选择性遗忘 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/fd1eff9dd295df50a41f2521942fa31d-Abstract-Conference.html) |
+| 论文解析 | 建议 | 主要内容 | 原文 |
+| :--- | :--- | :--- | :---: |
+| [LongMemEval](papers/07-longmemeval.md) | 精读 | 检查长时间交互中的事实提取、跨会话推理、更新、时间判断与拒答 | [↗](https://arxiv.org/abs/2410.10813) |
+| [MemoryArena](papers/17-memoryarena.md) | 重点选读 | 检查 Agent 能否把前面任务的经验用于后续相互依赖的任务 | [↗](https://proceedings.mlr.press/v306/he26am.html) |
+| [LoCoMo](papers/18-locomo.md) | 了解即可 | 通过长期对话检查事实回忆、跨事件理解、时间关系和回答一致性 | [↗](https://aclanthology.org/2024.acl-long.747/) |
+| [MemoryAgentBench](papers/19-memoryagentbench.md) | 重点选读 | 逐步输入信息，分别测试检索、测试时学习、长程理解和选择性遗忘 | [↗](https://proceedings.iclr.cc/paper_files/paper/2026/hash/fd1eff9dd295df50a41f2521942fa31d-Abstract-Conference.html) |
 
 <a id="rag"></a>
 

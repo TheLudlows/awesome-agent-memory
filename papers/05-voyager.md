@@ -1,5 +1,9 @@
 # Voyager：基于大语言模型的开放式具身智能体
 
+**阅读建议：重点选读** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+重点读技能怎样生成、验证、入库和被后续程序调用。把自动课程、迭代修复与技能库的作用分开看，再核对消融；仅看到任务完成得更多，还不能判断增益主要来自哪一环。
+
 > 把做成功的操作保存为代码技能，后续检索、组合并复用。
 
 **英文题名**：Voyager: An Open-Ended Embodied Agent with Large Language Models  

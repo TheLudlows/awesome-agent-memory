@@ -1,5 +1,9 @@
 # TOIS 记忆机制综述：基于大语言模型的智能体记忆机制综述
 
+**阅读建议：了解即可** · [查看分级依据与阅读顺序](../README.md#priorities)
+
+把它当作查阅地图：先弄清记忆的来源、表示和操作，再按问题找原始论文。无需逐项背分类；分类完整并不意味着提出了新的记忆算法。
+
 > 用“来源、形式、操作、评测”给 Agent 记忆建立分类地图。
 
 **英文题名**：A Survey on the Memory Mechanism of Large Language Model-based Agents  
